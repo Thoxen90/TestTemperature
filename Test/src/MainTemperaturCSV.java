@@ -14,6 +14,7 @@ public class MainTemperaturCSV {
 
 
 		for(int i =0; i < tdr.ANZAHL_DATENSAETZE; i++) {
+			//edit von mir um falsche stellen zu erkennen auszugeben und zu ignorieren
 			if(tdr.getTemperatureInLine(i)>=45) {
 				int temp = tdr.getTemperatureInLine(i);
 				System.out.println("Falsche Stelle in Zeile"+(i+1));
@@ -26,6 +27,7 @@ public class MainTemperaturCSV {
 				System.out.println(temp);
 				i=i+1;
 			}
+			//----------------------------------------------------------------------------
 			sum = sum + tdr.getTemperatureInLine(i);
 		}
 		average = sum / tdr.ANZAHL_DATENSAETZE;
