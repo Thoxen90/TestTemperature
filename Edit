@@ -1,0 +1,12 @@
+String[][] records = tdr.getRecords();
+
+for (int i = 0; i < records.length; i++) {
+    if ((records[1] >= 45 || records[1] <= -15 ) && (i >= 2 || i < records.length - 2)) {
+        int vorgestern = Integer.parseInt(records[i-2][1]);
+        int gestern = Integer.parseInt(records[i-1][1]);
+        int morgen = Integer.parseInt(records[i+1][1]);
+        int uebermorgen = Integer.parseInt(records[i+2][1]);
+        records[1] =  (vorgestern + gestern + morgen + uebermorgen) / 4
+    }
+    System.out.println(records[0] + ";" + records[1]);
+}
